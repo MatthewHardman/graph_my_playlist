@@ -1,0 +1,1 @@
+web: python3 manage.py migrate && gunicorn graph_my_playlist.wsgi
