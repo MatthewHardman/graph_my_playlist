@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'rest_framework',
 
     #own
-    'home',
     'spotify',
     'pages',
 ]
