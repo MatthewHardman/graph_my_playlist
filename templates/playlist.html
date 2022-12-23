@@ -38,10 +38,12 @@
 <div id="acousticnessDiv" class="container" style="margin: auto">
   <svg viewbox="0 0 500 75" id="acousticSVG"></svg>
 </div>
+
+<!--
 <div id="popularityDiv" class="container" style="margin: auto">
   <svg viewbox="0 0 500 75" id="popularitySVG"></svg>
 </div>
-<!-- 
+
 <div id="genreDiv" class="container" style="margin: auto">
   <svg viewbox="0 0 500 500" id="genreSVG"></svg>
 </div>
@@ -88,10 +90,10 @@
       Acousticness - A confidence measure from 0.0 to 1.0 of whether the track
       is acoustic. 1.0 represents high confidence the track is acoustic.
       <br /><br />
-      Popularity - The popularity of a track is a value between 0 and 100, with
+      <!--Popularity - The popularity of a track is a value between 0 and 100, with
       100 being the most popular. The popularity is calculated by algorithm and
       is based, in the most part, on the total number of plays the track has had
-      and how recent those plays are.
+      and how recent those plays are.-->
     </p>
   </div>
 </div>
@@ -215,8 +217,8 @@
     .attr("y", 20)
     .text("Mood")
     .style("fill", "white");
-
-  /*Popularity*/
+  /*
+  Popularity
   let popularityPoint = "{{popularity}}" * 3.5 + 50;
 
   let xPopularity = d3
@@ -244,7 +246,7 @@
     .attr("y", 20)
     .text("Popularity")
     .style("fill", "white");
-
+  */
   /*genres*/
   /*
   let genres = JSON.parse("{{genre_names}}");

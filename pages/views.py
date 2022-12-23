@@ -118,26 +118,26 @@ def playlist_view(request, id):
                 print(track_audio_dictionary['audio_features'][index])
 
 #Get genre and popularity information from individual songs. 
-    genre_lst = []
-    popularity_lst = []
-    for i in track_id:
-        track_info_dictionary = execute_spotify_api_request(access_token, 'tracks/'+i)
-        artist_id = track_info_dictionary['artists'][0]['id']
-        artist_dictionary = execute_spotify_api_request(access_token,'artists/'+artist_id)
-        genre_lst.extend(artist_dictionary['genres'])
-        popularity_lst.append(track_info_dictionary['popularity'])
+   # genre_lst = []
+   # popularity_lst = []
+   # for i in track_id:
+   #     track_info_dictionary = execute_spotify_api_request(access_token, 'tracks/'+i)
+    #    artist_id = track_info_dictionary['artists'][0]['id']
+    #    artist_dictionary = execute_spotify_api_request(access_token,'artists/'+artist_id)
+     #   genre_lst.extend(artist_dictionary['genres'])
+     #   popularity_lst.append(track_info_dictionary['popularity'])
 
-    genre_Counter = Counter(genre_lst)
-    genre_tuple = genre_Counter.most_common()
+   # genre_Counter = Counter(genre_lst)
+   # genre_tuple = genre_Counter.most_common()
 
-    ordered_genre_lst_raw = []
-    ordered_genre_count_raw = []
-    for i in genre_tuple:
-        ordered_genre_lst_raw.append(i[0])
-        ordered_genre_count_raw.append(i[1])
+  #  ordered_genre_lst_raw = []
+   # ordered_genre_count_raw = []
+   # for i in genre_tuple:
+    #    ordered_genre_lst_raw.append(i[0])
+    #    ordered_genre_count_raw.append(i[1])
 
-    ordered_genre_lst = json.dumps(ordered_genre_lst_raw)
-    ordered_genre_count = json.dumps(ordered_genre_count_raw)
+   # ordered_genre_lst = json.dumps(ordered_genre_lst_raw)
+   # ordered_genre_count = json.dumps(ordered_genre_count_raw)
 
     context = {
         'acousticness': find_average(acousticness_lst),
@@ -146,9 +146,9 @@ def playlist_view(request, id):
         'duration': ms_to_min_sec(find_average(duration_lst)),
         'tempo': find_average(tempo_lst),
         'valence': find_average(valence_lst),
-        'popularity': find_average(popularity_lst),
-        'genre_names':ordered_genre_lst,
-        'genre_count': ordered_genre_count
+      #  'popularity': find_average(popularity_lst),
+      #  'genre_names':ordered_genre_lst,
+      #  'genre_count': ordered_genre_count
     }
     
     
