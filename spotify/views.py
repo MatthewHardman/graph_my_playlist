@@ -34,17 +34,17 @@ def spotify_callback(request, format=None):
     }).json()
 
     access_token = response.get('access_token')
-    token_type = response.get('token_type')
-    refresh_token = response.get('refresh_token')
+    #token_type = response.get('token_type')
+    #refresh_token = response.get('refresh_token')
     error = response.get('error')
 
-    user = execute_spotify_api_request(access_token, 'me')
+    #user = execute_spotify_api_request(access_token, 'me')
   
-    tokens = SpotifyToken.objects.filter(user=user)
+    #tokens = SpotifyToken.objects.filter(user=user)
 
-    if not tokens.exists():
-        tokens = SpotifyToken(user=user, access_token=access_token, refresh_token=refresh_token, token_type=token_type)
-        tokens.save()
+    #if not tokens.exists():
+        #tokens = SpotifyToken(user=user, access_token=access_token, refresh_token=refresh_token, token_type=token_type)
+        #tokens.save()
     
 
     return redirect('../pages/callback/'+access_token)
