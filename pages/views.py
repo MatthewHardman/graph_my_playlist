@@ -30,7 +30,10 @@ def callback_view(request, pk):
         for index in range(len(temp_playlist_dictionary['items'])):
             playlist_names.append(temp_playlist_dictionary['items'][index]['name'])
             playlist_id.append(temp_playlist_dictionary['items'][index]['id'])
-            playlist_img.append(temp_playlist_dictionary['items'][index]['images'][0]['url'])
+            try:
+                playlist_img.append(temp_playlist_dictionary['items'][index]['images'][0]['url'])
+            except: 
+                playlist_img.append('http://goo.gl/vyAs27')
             
         playlist_dictionary.update(temp_playlist_dictionary)
         requested += 50
