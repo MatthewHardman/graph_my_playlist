@@ -57,7 +57,7 @@ def execute_spotify_api_request(access_token, endpoint):
     response = get('https://api.spotify.com/v1/'+endpoint, {}, headers=headers)
 
     try:
-         return response.json()
+        return response.json()
     except:
         return{'Error: Could not process request'}
 
