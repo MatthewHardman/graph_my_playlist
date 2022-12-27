@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 #DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
-#DEBUG = False
+DEBUG = False
 
 ALLOWED_HOSTS = ['web-production-ae33.up.railway.app', '127.0.0.1', 'localhost']
 CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
