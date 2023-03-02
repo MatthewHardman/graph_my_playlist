@@ -1,6 +1,8 @@
 # graph_my_playlist
 Spotify Playlist Analyzer
 
+View at graphmyplaylist.com!
+
 Users log-in using their spotify credentials and then get access to all their playlists via Spotify's web API. They then can choose a playlist to have analyzed. Analysis 
 uses Spotify's web API to get values for each song and then provide an average value for the playlist as whole. 
 
